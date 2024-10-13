@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #f06, #48f, #0ff);
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #333;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cell:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+  }
+  
+  /* Distinct styles for player X and O */
+  .cell.x {
+    color: #ff5733;
+    font-weight: bold;
+  }
+  
+  .cell.o {
+    color: #3498db;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  
+  /* Winning Cell Highlight */
+  .winning-cell {
+    background-color: #ffcc00 !important;
+    animation: win-glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes win-glow {
+    from {
+      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #fff;
+    }
+  }
+  
+  /* Status Styling */
+  #status {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
